@@ -11,6 +11,9 @@ parser.add_argument('--output', type=str, default='out.ply', help='Output file')
 args = parser.parse_args()
 
 fbx = FBXLoader(args.file)
+
+print(fbx.meta)
+
 mesh = fbx.export_trimesh()
 
 # normalize mesh vertices (FBX tends to have extremely large range...)
@@ -23,5 +26,5 @@ mesh.vertices = (mesh.vertices - center) * scale
 mesh.export(args.output)
 
 # write the ASCII FBX tree to a file for deubgging
-# with open('tmp.txt', 'w') as f:
-#     pprint(fbx.fbxtree, f)
+with open(args.output + '.txt', 'w') as f:
+    pprint(fbx.fbxtree, f)

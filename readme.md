@@ -34,6 +34,10 @@ mesh = fbx.export_trimesh()
 
 # write to other formats (using trimesh API)
 mesh.export('model.obj')
+
+# meta: this is to provide some information on unimplemented features, you may inspect it to make sure if the model is expected to load correctly. e.g., hasDeformers=True usually means the model is skinned.
+print(fbx.meta)
+# {'hasImages': False, 'hasTextures': False, 'hasMaterials': True, 'hasDeformers': True, 'hasAnimations': True}
 ```
 
 We also provide a CLI tool:

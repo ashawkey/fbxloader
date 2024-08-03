@@ -273,6 +273,15 @@ class FBXLoader:
         self.scene = Scene(id=0) # root object (FBX always use 0 as root)
         self.objects[0] = self.scene
 
+        # meta for some unimplemented features which may lead to wrong geometry
+        self.meta = { 
+            'hasImages': False,
+            'hasTextures': False,
+            'hasMaterials': False,
+            'hasDeformers': False,
+            'hasAnimations': False,
+        }
+
         ### parse connections
         if 'Connections' in self.fbxtree: 
             raw_connections = self.fbxtree['Connections']['connections']
@@ -296,10 +305,25 @@ class FBXLoader:
         
         ### unimplemented things
         # ref: https://github.com/mrdoob/three.js/blob/b1046960d9adb597ba0ead7ff4a31f16d0a49a79/examples/jsm/loaders/FBXLoader.js#L163
-        # parse Images
-        # parse Textures
-        # parse Materials
-        # parse Deformers (some geometry seems to depend on this... but currently just ignored...)
+        # Images
+        if 'Video' in self.fbxtree['Objects']:
+            self.meta['hasImages'] = True
+
+        # Textures
+        if 'Texture' in self.fbxtree['Objects']:
+            self.meta['hasTextures'] = True
+
+        # Materials
+        if 'Material' in self.fbxtree['Objects']:
+            self.meta['hasMaterials'] = True
+
+        # Deformers (some geometry seems to depend on this... but currently just ignored...)
+        if 'Deformer' in self.fbxtree['Objects']:
+            self.meta['hasDeformers'] = True
+
+        # Animations
+        if 'AnimationCurve' in self.fbxtree['Objects']:
+            self.meta['hasAnimations'] = True
 
         ### parse Geometry (partially implemented...)
 
