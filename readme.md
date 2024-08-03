@@ -39,3 +39,7 @@ We provide a testing script and also a fbx mesh example:
 ```bash
 python tests/test.py examples/annulus.fbx
 ```
+
+### Reference
+The code is basically translated from [threejs's FBXLoader](https://github.com/mrdoob/three.js/blob/b1046960d9adb597ba0ead7ff4a31f16d0a49a79/examples/jsm/loaders/FBXLoader.js). 
+Thanks to the threejs team and also copilot!
