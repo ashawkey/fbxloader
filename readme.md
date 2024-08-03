@@ -1,11 +1,11 @@
 ## FBXLoader for Python
 
-[!WARNING]
-This library has very limited features and is only intended for **reading mesh geometry from binary FBX files**, it doesn't support:
-* Reading ASCII FBX files.
-* Reading textures and materials even if they are encoded in the file.
-* Reading skeletons and animations. Note that the geometry may also be incorrect if the mesh is skinned.
-* Writing FBX files.
+> [!WARNING]
+> This library has very limited features and is only intended for **reading mesh geometry from binary FBX files**, it doesn't support:
+> * Reading ASCII FBX files.
+> * Reading textures and materials even if they are encoded in the file.
+> * Reading skeletons and animations. Note that the geometry may also be incorrect if the mesh is skinned.
+> * Writing FBX files.
 
 However, this can be a starting point to implement more features in the future. Welcome to contribute!
 
