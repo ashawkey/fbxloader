@@ -22,6 +22,7 @@ pip install git+https://github.com/ashawkey/fbxloader.git
 
 ### Usage
 
+Python API:
 ```python
 from fbxloader import FBXLoader
 
@@ -35,7 +36,12 @@ mesh = fbx.export_trimesh()
 mesh.export('model.obj')
 ```
 
-We provide a testing script and also a fbx mesh example:
+We also provide a CLI tool:
+```bash
+fbxconverter <input.fbx> <output.obj/ply/glb>
+```
+
+Lastly, we provide a testing script and also a fbx mesh as an example:
 ```bash
 python tests/test.py examples/annulus.fbx
 ```
