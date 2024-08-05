@@ -6,8 +6,7 @@
 > * Reading textures and materials even if they are encoded in the file.
 > * Reading skeletons and animations. Note that the geometry may also be incorrect if the mesh is skinned.
 > * Writing FBX files.
-
-However, this can be a starting point to implement more features in the future. Welcome to contribute!
+> However, this can be a starting point to implement more features in the future. Welcome to contribute!
 
 
 ### Install

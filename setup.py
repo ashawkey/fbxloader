@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 if __name__ == "__main__":
     setup(
         name="fbxloader",
-        version="0.0.1",
+        version="0.0.2",
         description="utility to read fbx file",
         long_description=open("readme.md", encoding="utf-8").read(),
         long_description_content_type="text/markdown",
